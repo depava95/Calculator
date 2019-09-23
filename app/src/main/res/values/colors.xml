@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorBackspace">#5D4037</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorStatusBarLight">#005b9f</color>
+    <color name="colorStatusBarNight">#455A64</color>
+    
+    
+    <color name="colorNightModeGrayscale">#424242</color>
+    <color name="colorNightModeMaterial">#37474F</color>
+    <color name="colorNightModeMaterialDark">#263238</color>
+    <color name="colorNightModeBrown">#3E2723</color>
+    <color name="colorNightModeWhite">#A2A2A2</color>
+</resources>
