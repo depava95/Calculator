@@ -15,6 +15,8 @@ import org.mariuszgromada.math.mxparser.Expression;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView textViewValue;
@@ -161,20 +163,13 @@ public class MainActivity extends AppCompatActivity {
                 String temp = textView.replace("÷", "/");
                 String expressionText = temp.replace("×", "*");
                 Expression expression = new Expression(expressionText);
-                if (hasDot) {
-                    double result = expression.calculate();
-                    textViewResult.setText(String.valueOf(result));
-                    if (textViewResult.getText().toString().equals("NaN")) {
-                        textViewResult.setText(R.string.wrong_expression);
-                        textViewResult.setTextColor(Color.RED);
-                    }
-                } else {
-                    int result = (int) expression.calculate();
-                    textViewResult.setText(String.valueOf(result));
-                    if (textViewResult.getText().toString().equals("NaN")) {
-                        textViewResult.setText(R.string.wrong_expression);
-                        textViewResult.setTextColor(Color.RED);
-                    }
+                double result = expression.calculate();
+                DecimalFormat decimalFormat = new DecimalFormat("#.#####");
+                String toWrite = decimalFormat.format(result);
+                textViewResult.setText(toWrite);
+                if (textViewResult.getText().toString().equals("NaN")) {
+                    textViewResult.setText(R.string.wrong_expression);
+                    textViewResult.setTextColor(Color.RED);
                 }
             } else {
                 textViewResult.setText("");
